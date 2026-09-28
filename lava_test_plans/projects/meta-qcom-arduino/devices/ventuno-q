@@ -17,3 +17,9 @@
      "rawprogram": "rawprogram0.xml rawprogram1.xml",
      "patch": "patch0.xml patch1.xml"}
 ] %}
+
+{# Device-specific test exclusions for meta-qcom project #}
+{% set EXCLUDED_TESTS = ['AudioRecord', 'Docker_Kernel_Config', 'Ethernet_Basic_Validation', 'Kubernetes_Kernel_Config', 'fastrpc_test'] %}
+
+{# Exclude unsupported testplan for this device #}
+{% set EXCLUDED_TESTPLANS = [] %}
