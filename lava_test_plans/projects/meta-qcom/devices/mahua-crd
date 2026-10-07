@@ -1,0 +1,7 @@
+{% extends "devices/mahua-crd" %}
+
+{# Device-specific test exclusions for meta-qcom project #}
+{% set EXCLUDED_TESTS = [] %}
+
+{# Exclude unsupported testplans for this device #}
+{% set EXCLUDED_TESTPLANS = [] %}
