@@ -39,8 +39,11 @@
 # images live in a private S3 bucket, every download is authenticated
 "AUTH_HEADER_NAME": "QLIAuthorization"
 "AUTH_HEADER_TOKEN": "Q_QLI_S3_TOKEN"
-# debian suite, optionally with the image variant, e.g. trixie-weston-multimedia
+# debian suite, e.g. trixie
 "DEBIAN_RELEASE": "trixie"
+# image file name prefix: the suite, optionally with the image variant,
+# e.g. trixie-weston-multimedia
+"ARTIFACT_PREFIX": "trixie"
 "OS_INFO": "debian"
 "TEST_DEFINITIONS_REPOSITORY": "https://github.com/qualcomm-linux/qcom-linux-testkit/"
 "TEST_DEFINITIONS_REVISION": "main"

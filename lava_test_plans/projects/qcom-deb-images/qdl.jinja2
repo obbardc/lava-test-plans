@@ -6,11 +6,13 @@
 
 {# The flashing tarball is named <suite>[-<variant>]-flash-<storage>.tar.gz, #}
 {# e.g. trixie-flash-ufs.tar.gz or forky-weston-multimedia-flash-emmc.tar.gz. #}
-{# DEBIAN_RELEASE carries the suite and the image variant; qdl_tarball is set #}
-{# per device and says which storage the board is flashed over.               #}
+{# ARTIFACT_PREFIX carries the suite and the image variant and defaults to    #}
+{# DEBIAN_RELEASE, the bare suite; qdl_tarball is set per device and says     #}
+{# which storage the board is flashed over.                                   #}
 {% set debian_release = DEBIAN_RELEASE|default("trixie") %}
+{% set artifact_prefix = ARTIFACT_PREFIX|default(debian_release) %}
 {% set qdl_tarball = qdl_tarball|default("flash-ufs.tar.gz") %}
-{% set image_file_name = debian_release + "-" + qdl_tarball %}
+{% set image_file_name = artifact_prefix + "-" + qdl_tarball %}
 {# BUILD_DOWNLOAD_URL ends with a "/" #}
 {% set ROOTFS_URL = ROOTFS_URL|default(BUILD_DOWNLOAD_URL + image_file_name) %}
 
